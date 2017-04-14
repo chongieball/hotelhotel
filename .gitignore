@@ -1,0 +1,5 @@
+vendor/
+mysql/
+phinx.yml
+app/settings.php
+composer.lock

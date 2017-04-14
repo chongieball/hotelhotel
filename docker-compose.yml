@@ -1,0 +1,22 @@
+php:
+    image: chongieball/slim-php
+    ports:
+        - "8080:80"
+    volumes: 
+        - ./:/var/www/html
+    links:
+        - db
+db:
+    image: mysql:5.7
+    ports:
+        - "3366:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: root
+    volumes:
+        - ./mysql:/var/lib/mysql
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - "8888:80"
+    links:
+        - db
